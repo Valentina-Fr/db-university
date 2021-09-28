@@ -15,7 +15,7 @@ WHERE `cfu` > 10;
 
 SELECT * 
 FROM `students`
-WHERE YEAR(`date_of_birth`) > '1991';
+WHERE YEAR(`date_of_birth`) > 1991;
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 
@@ -45,6 +45,14 @@ FROM `departments`;
 SELECT COUNT(*)
 FROM `teachers`
 WHERE `phone` IS NULL;
+
+/* CON GROUP BY
+1. Contare quanti iscritti ci sono stati ogni anno */
+
+SELECT COUNT(*) AS `student_n`, YEAR(`enrolment_date`) AS `enrolment_year`
+FROM `students`
+GROUP BY `enrolment_year`;
+
 
 
 
